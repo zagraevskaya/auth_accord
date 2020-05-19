@@ -1,13 +1,11 @@
 package com.jwt.auth.service.impl;
 
-import com.jwt.auth.dao.TmpIdocDepatmentDao;
-import com.jwt.auth.dao.UserDao;
-import com.jwt.auth.model.Role;
-import com.jwt.auth.model.TmpIdocDepartment;
-import com.jwt.auth.model.User;
+import com.jwt.auth.dao.oracle.TmpIdocDepatmentDao;
+import com.jwt.auth.model.oracle.TmpIdocDepartment;
 import com.jwt.auth.service.TmpIdocDepartmentService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -18,6 +16,7 @@ import java.util.Optional;
 public class TmpIdocDepartmentImpl implements TmpIdocDepartmentService {
 
     @Autowired
+    @Qualifier("tmpIdocDepatmentDao")
     private TmpIdocDepatmentDao tmpIdocDepatmentDao;
 
     @Override

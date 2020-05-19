@@ -1,6 +1,6 @@
 package com.jwt.auth.service;
 
-import com.jwt.auth.model.User;
+import com.jwt.auth.model.mySql.User;
 import com.jwt.auth.model.UserDto;
 
 import java.util.List;

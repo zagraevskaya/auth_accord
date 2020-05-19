@@ -1,29 +1,31 @@
-package com.jwt.auth.model;
+package com.jwt.auth.model.oracle;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Table(name = "tmp_idoc_department", schema = "accord")
-public class TmpIdocDepartment {
-
+@Table(name = "TMP_IDOC_DEPARTMENT", schema = "SR_BANK")
+public class TmpIdocDepartment implements Serializable {
     @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name = "ID")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @Basic
-    @Column(name = "name_department")
+    @Column(name = "NAME_DEPARTMENT")
     private String nameDepartment;
     @Basic
-    @Column(name = "code_ispro")
+    @Column(name = "CODE_ISPRO")
     private String codeIspro;
     @Basic
-    @Column(name = "order_code")
+    @Column(name = "ORDER_CODE")
     private Integer orderCode;
     @Basic
-    @Column(name = "branch_id")
+    @Column(name = "BRANCH_ID")
     private Integer branchId;
 
+    @Basic
+    @Column(name = "ID")
     public int getId() {
         return id;
     }
@@ -32,7 +34,8 @@ public class TmpIdocDepartment {
         this.id = id;
     }
 
-
+    @Basic
+    @Column(name = "NAME_DEPARTMENT")
     public String getNameDepartment() {
         return nameDepartment;
     }
@@ -41,7 +44,8 @@ public class TmpIdocDepartment {
         this.nameDepartment = nameDepartment;
     }
 
-
+    @Basic
+    @Column(name = "CODE_ISPRO")
     public String getCodeIspro() {
         return codeIspro;
     }
@@ -50,7 +54,8 @@ public class TmpIdocDepartment {
         this.codeIspro = codeIspro;
     }
 
-
+    @Basic
+    @Column(name = "ORDER_CODE")
     public Integer getOrderCode() {
         return orderCode;
     }
@@ -59,7 +64,8 @@ public class TmpIdocDepartment {
         this.orderCode = orderCode;
     }
 
-
+    @Basic
+    @Column(name = "BRANCH_ID")
     public Integer getBranchId() {
         return branchId;
     }
@@ -82,6 +88,7 @@ public class TmpIdocDepartment {
 
     @Override
     public int hashCode() {
+
         return Objects.hash(id, nameDepartment, codeIspro, orderCode, branchId);
     }
 }

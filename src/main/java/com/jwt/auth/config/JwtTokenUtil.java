@@ -1,7 +1,7 @@
 package com.jwt.auth.config;
 
 
-import com.jwt.auth.model.User;
+import com.jwt.auth.model.mySql.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

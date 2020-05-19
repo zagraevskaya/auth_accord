@@ -2,7 +2,7 @@ package com.jwt.auth.controller;
 
 
 import com.jwt.auth.model.ApiResponse;
-import com.jwt.auth.model.User;
+import com.jwt.auth.model.mySql.User;
 import com.jwt.auth.model.UserDto;
 import com.jwt.auth.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.jwt.auth.model;
+package com.jwt.auth.model.mySql;
 
 import javax.persistence.*;
 import java.util.Objects;

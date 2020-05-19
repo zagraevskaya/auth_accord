@@ -1,4 +1,4 @@
-package com.jwt.auth.model;
+package com.jwt.auth.model.mySql;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "user")
+@Table(name = "user",schema = "accord")
 public class User {
     @Id
     @Column(name = "user_id")

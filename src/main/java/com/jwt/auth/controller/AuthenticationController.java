@@ -4,7 +4,7 @@ import com.jwt.auth.config.JwtTokenUtil;
 import com.jwt.auth.model.ApiResponse;
 import com.jwt.auth.model.AuthToken;
 import com.jwt.auth.model.LoginUser;
-import com.jwt.auth.model.User;
+import com.jwt.auth.model.mySql.User;
 import com.jwt.auth.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -48,7 +48,7 @@ public class AuthenticationController {
     public ApiResponse<AuthToken> generateTokenGet() throws AuthenticationException {
        // BCryptPasswordEncoder passwordEncoder;
         LoginUser loginUser=new LoginUser();
-        loginUser.setUsername("nata");
+        loginUser.setUsername("admin");
         loginUser.setPassword("123456");
 
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginUser.getUsername(), loginUser.getPassword()));

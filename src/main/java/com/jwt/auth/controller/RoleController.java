@@ -1,8 +1,8 @@
 package com.jwt.auth.controller;
 
 import com.jwt.auth.model.*;
+import com.jwt.auth.model.mySql.Role;
 import com.jwt.auth.service.RoleService;
-import com.jwt.auth.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
