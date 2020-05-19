@@ -4,11 +4,11 @@
     "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-    <property name="connection.url">jdbc:mysql://localhost:3306/accord</property>
-    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-      <mapping class="com.jwt.auth.model.User"/>
-      <mapping class="com.jwt.auth.model.Role"/>
-      <mapping class="com.jwt.auth.model.TmpIdocDepartment"/>
+    <property name="connection.url">jdbc:oracle:thin:@192.168.50.159:1521:ACCORD</property>
+    <property name="connection.driver_class">oracle.jdbc.OracleDriver</property>
+      <mapping class="com.jwt.auth.model.mySql.User"/>
+      <mapping class="com.jwt.auth.model.mySql.Role"/>
+      <mapping class="com.jwt.auth.model.oracle.TmpIdocDepartment"/>
       <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 

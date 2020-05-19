@@ -1,15 +1,12 @@
 package com.jwt.auth.service.impl;
 
-import com.jwt.auth.dao.RoleDao;
-import com.jwt.auth.dao.UserDao;
-import com.jwt.auth.model.Role;
+import com.jwt.auth.dao.mySql.RoleDao;
+import com.jwt.auth.model.mySql.Role;
 import com.jwt.auth.model.RoleDto;
-import com.jwt.auth.model.User;
 import com.jwt.auth.service.RoleService;
-import com.jwt.auth.service.UserService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -20,6 +17,7 @@ import java.util.Optional;
 public class RoleServiceImpl implements  RoleService {
 
     @Autowired
+    @Qualifier("roleDao")
     private RoleDao roleDao;
 
     @Override

@@ -1,7 +1,7 @@
 package com.jwt.auth.config;
 
 
-import com.jwt.auth.model.User;
+import com.jwt.auth.model.mySql.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -53,7 +53,7 @@ public class JwtTokenUtil implements Serializable {
     private String doGenerateToken(String subject) {
 
         Claims claims = Jwts.claims().setSubject(subject);
-        claims.put("scopes", Arrays.asList(new SimpleGrantedAuthority("ROLE_ADMIN")));
+        claims.put("scopes", Arrays.asList(new SimpleGrantedAuthority("ACCORD")));
 
         return Jwts.builder()
                 .setClaims(claims)
@@ -66,8 +66,10 @@ public class JwtTokenUtil implements Serializable {
 
     public Boolean validateToken(String token, UserDetails userDetails) {
         final String username = getUsernameFromToken(token);
+        System.out.println("!!!"+username);
+        System.out.println("!!!"+userDetails.getUsername());
         return (
-              username.equals(userDetails.getUsername())
+                username.equals(userDetails.getUsername())
                     && !isTokenExpired(token));
     }
 

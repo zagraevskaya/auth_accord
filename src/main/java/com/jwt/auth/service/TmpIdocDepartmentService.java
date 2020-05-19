@@ -1,8 +1,6 @@
 package com.jwt.auth.service;
 
-import com.jwt.auth.model.Role;
-import com.jwt.auth.model.RoleDto;
-import com.jwt.auth.model.TmpIdocDepartment;
+import com.jwt.auth.model.oracle.TmpIdocDepartment;
 
 import java.util.List;
 

@@ -1,11 +1,12 @@
 package com.jwt.auth.service.impl;
 
-import com.jwt.auth.dao.UserDao;
-import com.jwt.auth.model.User;
+import com.jwt.auth.dao.mySql.UserDao;
+import com.jwt.auth.model.mySql.User;
 import com.jwt.auth.model.UserDto;
 import com.jwt.auth.service.UserService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -21,7 +22,8 @@ import java.util.Optional;
 
 @Service(value = "userService")
 public class UserServiceImpl implements UserDetailsService, UserService {
-	
+
+	@Qualifier("userDao")
 	@Autowired
 	private UserDao userDao;
 
@@ -54,6 +56,11 @@ public class UserServiceImpl implements UserDetailsService, UserService {
 	@Override
 	public User findOne(String username) {
 		return userDao.findByName(username);
+	}
+
+	@Override
+	public User findByEmail(String username) {
+		return userDao.findByEmail(username);
 	}
 
 	@Override

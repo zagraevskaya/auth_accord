@@ -2,7 +2,7 @@ package com.jwt.auth.controller;
 
 
 import com.jwt.auth.model.*;
-import com.jwt.auth.service.RoleService;
+import com.jwt.auth.model.oracle.TmpIdocDepartment;
 import com.jwt.auth.service.TmpIdocDepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
