@@ -126,10 +126,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public DataSource mySqlDataSource() {
         DataSourceProperties mySqlDataSourceProperties = mySqlDataSourceProperties();
 
-        System.out.println("!!!"+mySqlDataSourceProperties.getDriverClassName());
-        System.out.println("!!!"+mySqlDataSourceProperties.getUrl());
-        System.out.println("!!!"+mySqlDataSourceProperties.getUsername());
-        System.out.println("!!!"+mySqlDataSourceProperties.getPassword());
+       // System.out.println("!!!"+mySqlDataSourceProperties.getDriverClassName());
+       // System.out.println("!!!"+mySqlDataSourceProperties.getUrl());
+       // System.out.println("!!!"+mySqlDataSourceProperties.getUsername());
+       // System.out.println("!!!"+mySqlDataSourceProperties.getPassword());
 
 
         return DataSourceBuilder.create()

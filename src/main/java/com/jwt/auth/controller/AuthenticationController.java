@@ -48,11 +48,11 @@ public class AuthenticationController {
     public ApiResponse<AuthToken> generateTokenGet() throws AuthenticationException {
        // BCryptPasswordEncoder passwordEncoder;
         LoginUser loginUser=new LoginUser();
-        loginUser.setUsername("admin");
+        loginUser.setUsername("accord@accordbank.com.ua");
         loginUser.setPassword("123456");
 
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginUser.getUsername(), loginUser.getPassword()));
-        final User user = userService.findOne(loginUser.getUsername());
+        final User user = userService.findByEmail(loginUser.getUsername());
 
         final String token = jwtTokenUtil.generateToken(user);
         return new ApiResponse<>(200, "success",new AuthToken(token, user.getName()));

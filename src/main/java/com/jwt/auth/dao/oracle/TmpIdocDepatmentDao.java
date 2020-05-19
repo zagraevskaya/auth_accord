@@ -15,6 +15,7 @@ import java.util.List;
 public interface TmpIdocDepatmentDao extends CrudRepository<TmpIdocDepartment, Integer> {
     TmpIdocDepartment findByNameDepartment(String name);
 
-    @Query("select b from TmpIdocDepartment b where b.branchId = :branchId order by codeIspro")    //This is using a named query method
+    @Query("select b from TmpIdocDepartment b where b.branchId = :branchId " +
+            "and codeIspro not in ('02','97','98') order by codeIspro")    //This is using a named query method
     List<TmpIdocDepartment> getDepartmentsByBranchId(@Param("branchId") Integer branchId);
 }

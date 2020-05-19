@@ -10,4 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 public interface UserDao extends CrudRepository<User, Integer> {
     @Transactional(transactionManager="mySqlTransactionManager")
     User findByName(String name);
+
+    @Transactional(transactionManager="mySqlTransactionManager")
+    User findByEmail(String email);
 }

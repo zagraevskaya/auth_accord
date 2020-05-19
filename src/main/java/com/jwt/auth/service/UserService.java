@@ -13,6 +13,8 @@ public interface UserService {
 
     User findOne(String username);
 
+    User findByEmail(String username);
+
     User findById(int id);
 
     UserDto update(UserDto userDto);

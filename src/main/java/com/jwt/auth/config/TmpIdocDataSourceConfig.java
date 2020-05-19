@@ -44,10 +44,10 @@ public class TmpIdocDataSourceConfig {
     public DataSource tmpIdocDataSource() {
         DataSourceProperties tmpIdocDataSourceProperties = tmpIdocDataSourceProperties();
 
-        System.out.println("!!!"+tmpIdocDataSourceProperties.getDriverClassName());
-        System.out.println("!!!"+tmpIdocDataSourceProperties.getUrl());
-        System.out.println("!!!"+tmpIdocDataSourceProperties.getUsername());
-        System.out.println("!!!"+tmpIdocDataSourceProperties.getPassword());
+      //  System.out.println("!!!"+tmpIdocDataSourceProperties.getDriverClassName());
+      //  System.out.println("!!!"+tmpIdocDataSourceProperties.getUrl());
+      //  System.out.println("!!!"+tmpIdocDataSourceProperties.getUsername());
+      //  System.out.println("!!!"+tmpIdocDataSourceProperties.getPassword());
 
 
         return DataSourceBuilder.create()

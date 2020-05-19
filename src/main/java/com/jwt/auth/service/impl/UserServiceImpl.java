@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserDetailsService, UserService {
 	private BCryptPasswordEncoder bcryptEncoder;
 
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		User user = userDao.findByName(username);
+		User user = userDao.findByEmail(username);
 		if(user == null){
 			throw new UsernameNotFoundException("Invalid username or password.");
 		}
@@ -56,6 +56,11 @@ public class UserServiceImpl implements UserDetailsService, UserService {
 	@Override
 	public User findOne(String username) {
 		return userDao.findByName(username);
+	}
+
+	@Override
+	public User findByEmail(String username) {
+		return userDao.findByEmail(username);
 	}
 
 	@Override
